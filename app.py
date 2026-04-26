@@ -68,7 +68,7 @@ if st.sidebar.button("로그아웃"):
     st.rerun()
 
 # 캐싱
-@st.cache_data # 캐싱으로 파일을 한 번만 불러와 연산 빨라짐
+@st.cache_data 
 def load_audio(path):
     start = tm.time()
 
