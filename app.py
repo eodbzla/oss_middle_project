@@ -72,7 +72,7 @@ if st.sidebar.button("로그아웃"):
 def load_audio(path):
     start = tm.time()
 
-    tm.sleep(0.5)
+    tm.sleep(1)
 
     with open(path, "rb") as f:
         return f.read()
