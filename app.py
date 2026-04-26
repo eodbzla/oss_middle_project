@@ -70,10 +70,14 @@ if st.sidebar.button("로그아웃"):
 # 캐싱
 @st.cache_data 
 def load_audio(path):
-    start = tm.time()
 
+    with open(path, "rb") as f:
+        return f.read()
+    
+# 캐싱 시연
+@st.cache_data 
+def load_audio1(path):
     tm.sleep(1)
-
     with open(path, "rb") as f:
         return f.read()
 
@@ -197,7 +201,7 @@ if menu == "설명":
         st.header("연습 문제")
         st.subheader("난이도 2️⃣/5️⃣")
 
-        audio_bytes1 = load_audio('assets/love_love_love.mp3')
+        audio_bytes1 = load_audio1('assets/love_love_love.mp3')
         st.audio(audio_bytes1)
 
         answer1 = st.text_input("정답은?", key = "ans1")
